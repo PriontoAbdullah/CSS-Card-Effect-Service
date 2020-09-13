@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&displayer=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#service-icon-card-effect {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: #333;
+}
+
+.containerx {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.containerx .cardx {
+    position: relative;
+    width: 45%;
+    height: 250px;
+    background: #fff;
+    display: flex;
+    margin: 30px 0;
+}
+
+.containerx .cardx .imgx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.containerx .cardx:hover .imgx {
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: #ff0057;
+}
+
+.containerx .cardx .imgx:before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 6em;
+    color: rgba(255, 255, 255, .05);
+    font-weight: 700;
+}
+
+.containerx .cardx .imgx img {
+    max-width: 100px;
+    transition: 0.5s ease-in-out;
+}
+
+.containerx .cardx:hover .imgx img {
+    max-width: 75px;
+}
+
+.containerx .cardx .contentx {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerx .cardx .contentx h2 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.containerx .cardx .contentx a {
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+    color: #fff;
+    background: #333;
+}
+
+@media (max-width: 992px) {
+    .containerx {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerx .cardx {
+        width: 400px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .containerx .cardx {
+        max-width: 300px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .containerx .cardx .imgx {
+        position: relative;
+    }
+
+    .containerx .cardx .imgx, .containerx .cardx:hover .imgx {
+        width: 100%;
+        height: 200px;
+        left: 0;
+    }
+
+    .containerx .cardx .imgx img, .containerx .cardx:hover .imgx img {
+        max-width: 100px;
+    }
+
+    .containerx .cardx .contentx {
+        position: relative;
+        width: 100%;
+    }
+}
